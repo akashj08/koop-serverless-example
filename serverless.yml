@@ -6,6 +6,8 @@ plugins:
 provider:
   name: aws
   runtime: nodejs10.x
+  deploymentBucket: deployment-dev
+
 
 functions:
   get-data:
