@@ -1,5 +1,5 @@
 node ('master'){
-    properties([parameters([string(defaultValue: 'master', name: 'BRANCH')])])
+   // properties([parameters([string(defaultValue: 'master', name: 'BRANCH')])])
 
     try {
        
