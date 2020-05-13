@@ -4,25 +4,23 @@
 import requests
 import json
 import time
+import sys
 
 
 
 
-URL = "https://hdhdpxipga.execute-api.us-east-1.amazonaws.com/dev/my-provider/{host}/FeatureServer/0"
+#URL = "https://hdhdpxipga.execute-api.us-east-1.amazonaws.com/dev/my-provider/{host}/FeatureServer/0"
 
-success_list = []
-failure_list = []
-
+URL = str(sys.argv[1])
 
 def ApiCheckHealth():
     try:
         res = requests.get(URL)
        # time.sleep(0.5)
         if res.status_code == 200:
-            print("API "+ URL + "STATUS ==>" + str(res.status_code))
-            #print("STATUS :",res.status_code)
+            print("API : \t"+ URL + "\tSTATUS ==>" + str(res.status_code))
         else:
-            print("API "+ URL + "STATUS ==>" + str(res.status_code))  
+            print("API : \t"+ URL + "\tSTATUS ==>" + str(res.status_code))
             
     except Exception as er:
         print("error",er)
