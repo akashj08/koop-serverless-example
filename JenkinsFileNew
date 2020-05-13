@@ -1,49 +1,31 @@
 node ('master'){
-   // properties([parameters([string(defaultValue: 'master', name: 'BRANCH')])])
 
     try {
-       
-        def code_repo = "git@github.com:akashj08/koop-serverless-example.git"
-        def gitCredentials= "133a87a4-ea9e-4e6a-91cc-4f27ea8bf6fd"
-        
         env.NODEJS_HOME = "${tool 'nodejs12'}"
 	    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
-       
 
-        stage('Checkout SCM') {
-  
-        checkout scm      
-        
+        stage('Checkout SCM'){
+            checkout scm      
         }
 
-        
-
-       stage("npm"){
-              
-
-	     sh 'npm --version'
-       }
-       stage("Install"){
-         sh """npm install """
-               //npm install -g serverless
-               //npm install serverless-offline --save-dev """  
-
-	     
-	     
-       }
+        stage("npm"){
+            sh 'npm --version'
+        }
+        stage("Install"){
+            sh """npm install """
+               
+        }
      
      
        stage("deploy") {
-           
-          //sh 'npm run remove'
-          sh 'rm -rf .serverless/'
-          //sh 'ls -la'
-          sh 'npm run deploy'
+           //sh 'npm run remove'
+            sh 'rm -rf .serverless/'
+            //sh 'ls -la'
+            sh 'npm run deploy'
        }
 
     }
-         
-    
+            
     catch (exc) {
         echo "I failed ${exc}"
     }
