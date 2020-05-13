@@ -12,7 +12,7 @@ node ('master'){
 
         stage('Checkout SCM') {
   
-        checkout([$class: 'GitSCM', branches: [[name: '${BRANCH}']], doGenerateSubmoduleConfigurations: false, userRemoteConfigs: [[credentialsId: "${gitCredentials}",url: "${code_repo}"]]])       
+        checkout scm      
         
         }
 
