@@ -19,9 +19,10 @@ def ApiCheckHealth():
         res = requests.get(URL)
        # time.sleep(0.5)
         if res.status_code == 200:
-            print("STATUS :OK")
+            print("API ",URL)
+            print("STATUS :",res.status_code)
         else:
-            print("STATUS : NOT UP")      
+            print("STATUS :", res.status_code)      
             
     except Exception as er:
         print("error",er)
