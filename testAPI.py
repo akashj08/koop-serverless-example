@@ -4,14 +4,12 @@
 import requests
 import json
 import time
+import sys
 
 
 
 
-URL = "https://hdhdpxipga.execute-api.us-east-1.amazonaws.com/dev/my-provider/{host}/FeatureServer/0"
-
-
-
+URL = str(sys.argv[1])
 
 def ApiCheckHealth():
     try:
