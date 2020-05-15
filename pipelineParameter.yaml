@@ -1,4 +1,4 @@
 ENVIRONMENT_NAME: QA
 SERVICE_NAME: MyAPP
 SLACK_CHANNEL: test-alert
-END_POINT: NA
+END_POINT: https://pg8frkag90.execute-api.us-east-1.amazonaws.com/dev/my-provider/{host}/FeatureServer/0
