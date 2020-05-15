@@ -10,8 +10,7 @@ import time
 
 URL = "https://hdhdpxipga.execute-api.us-east-1.amazonaws.com/dev/my-provider/{host}/FeatureServer/0"
 
-success_list = []
-failure_list = []
+
 
 
 def ApiCheckHealth():
